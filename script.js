@@ -16,3 +16,23 @@ function getComputerChoice() {
 }
 getComputerChoice();
 console.log(computerChoice);
+
+// Human Choice code
+
+let humanChoice;
+
+function getHumanChoice() {
+    let humanInput = prompt("Please press the first letter of your chioce on keyboard('R'ock,'P'aper,'S'cissors)","");
+    if (humanInput === "r" || humanInput === "R") {
+        humanChoice = "Rock";
+    } else if (humanInput === "p" || humanInput === "P") {
+        humanChoice = "Paper";
+    } else if (humanInput === "s" || humanInput === "S") {
+        humanChoice = "Scissors";
+    } else {
+        alert("Please input 'R', 'P' or 'S'!");
+    }
+    return humanChoice;
+}
+getHumanChoice();
+console.log(humanChoice);
