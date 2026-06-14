@@ -14,8 +14,8 @@ function getComputerChoice() {
     return computerChoice;
     
 }
-getComputerChoice();
-console.log(computerChoice);
+// getComputerChoice();
+// console.log(computerChoice);
 
 // Human Choice code
 
@@ -34,10 +34,42 @@ function getHumanChoice() {
     }
     return humanChoice;
 }
-getHumanChoice();
-console.log(humanChoice);
+// getHumanChoice();
+// console.log(humanChoice);
 
 // Players score variables
 
 let humanScore = 0;
 let computerScore = 0;
+
+// Logic to play a single round
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+function playRound(humanChoice,computerChoice) {
+    if (humanChoice === computerChoice) {
+        console.log("Draw!");
+    } else if (humanChoice === "Rock" && computerChoice === "Paper") {
+        console.log("You Lose! Paper beats Rock");
+        computerScore++;
+    } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
+        console.log("You Win! Rock beats Scissors");
+        humanScore++;
+    } else if (humanChoice === "Paper" && computerChoice === "Rock") {
+        console.log("You Win! Paper beats Rock");
+        humanScore++;
+    } else if (humanChoice === "Paper" && computerChoice === "Scissors") {
+        console.log("You Lose! Scissors beats Paper");
+        computerScore++;
+    } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
+        console.log("You Win! Scissors beats Paper");
+        humanScore++;
+    } else if (humanChoice === "Scissors" && computerChoice === "Rock") {
+        console.log("You Lose! Rock beats Scissors");
+        computerScore++;
+    }
+}
+playRound(humanSelection,computerSelection);
+
+
