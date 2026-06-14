@@ -44,8 +44,8 @@ let computerScore = 0;
 
 // Logic to play a single round
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
 
 function playRound(humanChoice,computerChoice) {
     if (humanChoice === computerChoice) {
@@ -70,6 +70,23 @@ function playRound(humanChoice,computerChoice) {
         computerScore++;
     }
 }
-playRound(humanSelection,computerSelection);
+
+function playGame() {
+    for (let i = 1; i < 5; i++) {
+        playRound(humanSelection,computerSelection);
+        humanSelection = getHumanChoice();
+        computerSelection = getComputerChoice();
+    }
+    if (humanScore === computerScore) {
+        console.log("Final score is Draw!");
+    } else if (humanScore > computerScore) {
+        console.log("The Winner is Human!");
+    } else {
+        console.log("The Winner is Computer!");
+    }
+}
+playGame();
+
+ 
 
 
